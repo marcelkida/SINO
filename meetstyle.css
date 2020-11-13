@@ -1,0 +1,84 @@
+@keyframes transitionfadein {
+  0% {
+     opacity: 0;
+  }
+  100% {
+     opacity: 1;
+  }
+}
+body{
+  background-color: white;
+  animation: transitionfadein 1s;
+}
+#card1{
+  position: absolute;
+  left: 50%;
+  transform-origin: 0% 200%;
+
+}
+#card2{
+  position: absolute;
+  left: 50%;
+  transform-origin: 0% 200%;
+  transform: rotate(-35deg);
+
+}
+#card3{
+  position: absolute;
+  left: 50%;
+  transform-origin: 0% 200%;
+  transform: rotate(-25deg);
+
+}
+#card4{
+  position: absolute;
+  left: 50%;
+  transform-origin: 0% 200%;
+  transform: rotate(-15deg);
+
+}
+#card5{
+  position: absolute;
+  left: 50%;
+  transform-origin: 0% 200%;
+  transform: rotate(-5deg);
+
+}
+#card6{
+  position: absolute;
+  left: 50%;
+  transform-origin: 0% 200%;
+  transform: rotate(5deg);
+
+}
+#card7{
+  position: absolute;
+  left: 50%;
+  transform-origin: 0% 200%;
+  transform: rotate(15deg);
+
+}
+#card8{
+  position: absolute;
+  left: 50%;
+  transform-origin: 0% 200%;
+  transform: rotate(25deg);
+}
+card1:hover{
+    transform-origin: 200% 100%;
+    transform: rotate(0deg);
+    transform: scale(2);
+    z-index: 100;
+    pointer-events: none;
+}
+.panel{
+  position: absolute;
+  left: 42%;
+  height: 40%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card{
+  top: 50%
+}
