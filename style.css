@@ -1,5 +1,5 @@
 @font-face {
-  font-family: CaboRounded;
+  font-family: "CaboRounded";
   src:url("Cabo-Rounded-Regular.otf");
 }
 @keyframes fadeInOut {

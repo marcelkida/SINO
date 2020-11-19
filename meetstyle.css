@@ -94,4 +94,8 @@ body{
   font-size: 30vw;
   opacity: 0%;
   transition: all 1s;
+  font-family: CaboRounded, Arial, Helvetica, sans-serif;
+}
+svg path, svg text{
+  transition: all 1s;
 }
