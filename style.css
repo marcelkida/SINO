@@ -266,7 +266,6 @@ h2 a{
     filter:brightness(10);
   }
   100%{
-    animation-timing-function:$ease-in-quint;
     transform:scale(0.000,0.0001) translate3d(0,0,0);
     -webkit-filter:brightness(50);
     filter:brightness(50);

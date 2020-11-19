@@ -18,7 +18,7 @@
     <svg class="headerlogo"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 287.11 381.77" height=100% width=100%>
       <defs>
         <style>
-          .cls-1{fill:gray;}.cls-2{font-size:72px;fill:gray;stroke:gray;stroke-miterlimit:10;stroke-width:0.25px;font-family:CaboRounded;letter-spacing:0.56em;}
+          .cls-1{fill:gray;}.cls-2{font-size:72px;fill:gray;stroke:gray;stroke-miterlimit:10;stroke-width:0.25px;font-family:CaboRounded, Arial, Helvetica, sans-serif;letter-spacing:0.56em;}
         </style>
       </defs>
       <g id="Layer_2" data-name="Layer 2">
@@ -34,32 +34,84 @@
   </a>
   </header>
     </div>
+  <div class="name">Marcel</div>
 <div class="cards">
 
 
-  <img class="card"id="card1"src="bandcards-01.svg" alt="" height="30%" onmouseover="mouseOver(card1)" onmouseout="mouseOut()">
-  <img class="card"id="card2"src="bandcards-01.svg" alt="" height="30%"onmouseover="mouseOver(card2)"onmouseout="mouseOut()">
-  <img class="card"id="card3"src="bandcards-01.svg" alt="" height="30%"onmouseover="mouseOver(card3)"onmouseout="mouseOut()">
-  <img class="card"id="card4"src="bandcards-01.svg" alt="" height="30%"onmouseover="mouseOver(card4)"onmouseout="mouseOut()">
-  <img class="card"id="card5"src="bandcards-01.svg" alt="" height="30%"onmouseover="mouseOver(card5)"onmouseout="mouseOut()">
-  <img class="card"id="card6"src="bandcards-01.svg" alt="" height="30%"onmouseover="mouseOver(card6)"onmouseout="mouseOut()">
-  <img class="card"id="card7"src="bandcards-01.svg" alt="" height="30%"onmouseover="mouseOver(card7)"onmouseout="mouseOut()">
-  <img class="card"id="card8"src="bandcards-01.svg" alt="" height="30%"onmouseover="mouseOver(card8)"onmouseout="mouseOut()">
+  <img class="card"id="card1"src="cards/c-01.png" alt="" height="30%" onmouseover="mouseOver(card1)" onmouseout="mouseOut()">
+  <img class="card"id="card2"src="cards/c-02.png" alt="" height="30%"onmouseover="mouseOver(card2)"onmouseout="mouseOut()">
+  <img class="card"id="card3"src="cards/c-03.png" alt="" height="30%"onmouseover="mouseOver(card3)"onmouseout="mouseOut()">
+  <img class="card"id="card4"src="cards/c-04.png" alt="" height="30%"onmouseover="mouseOver(card4)"onmouseout="mouseOut()">
+  <img class="card"id="card5"src="cards/c-05.png" alt="" height="30%"onmouseover="mouseOver(card5)"onmouseout="mouseOut()">
+  <img class="card"id="card6"src="cards/c-06.png" alt="" height="30%"onmouseover="mouseOver(card6)"onmouseout="mouseOut()">
+  <img class="card"id="card7"src="cards/c-07.png" alt="" height="30%"onmouseover="mouseOver(card7)"onmouseout="mouseOut()">
+  <img class="card"id="card8"src="cards/c-08.png" alt="" height="30%"onmouseover="mouseOver(card8)"onmouseout="mouseOut()">
 </div>
 <div class="panels">
-  <img class="panel"id="panel1"src="bandcards-01.svg">
-  <img class="panel"id="panel2"src="bandcards-01.svg">
-  <img class="panel"id="panel3"src="bandcards-01.svg">
-  <img class="panel"id="panel4"src="bandcards-01.svg">
-  <img class="panel"id="panel5"src="bandcards-01.svg">
-  <img class="panel"id="panel6"src="bandcards-01.svg">
-  <img class="panel"id="panel7"src="bandcards-01.svg">
-  <img class="panel"id="panel8"src="bandcards-01.svg">
+  <img class="panel"id="panel1"src="cards/c-09.png">
+  <img class="panel"id="panel2"src="cards/c-10.png">
+  <img class="panel"id="panel3"src="cards/c-11.png">
+  <img class="panel"id="panel4"src="cards/c-12.png">
+  <img class="panel"id="panel5"src="cards/c-13.png">
+  <img class="panel"id="panel6"src="cards/c-14.png">
+  <img class="panel"id="panel7"src="cards/c-15.png">
+  <img class="panel"id="panel8"src="cards/c-16.png">
 </div>
 <script>
   //document.getElementsByClassName("card").onmouseover = function() {mouseOver()};
   //document.getElementsByClassName("card").onmouseout = function() {mouseOut()};
   var num = ""
+  var selum = ""
+  var dict = {
+    "1n": "Marcel",
+    "1c": "#1a1a2e",
+    "2n": "Minwoo",
+    "2c": "#3B3355",
+    "3n": "Jeffrey",
+    "3c": "#433633",
+    "4n": "Justin",
+    "4c": "#01024e",
+    "5n": "Juneoh",
+    "5c": "#231651",
+    "6n": "Jordan",
+    "6c": "#44000d",
+    "7n": "Junsu",
+    "7c": "#003545",
+    "8n": "Paul",
+    "8c": "#5F0F40",
+  };
+  function invertColor(hex, bw) {
+    if (hex.indexOf('#') === 0) {
+        hex = hex.slice(1);
+    }
+    // convert 3-digit hex to 6-digits.
+    if (hex.length === 3) {
+        hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+    }
+    if (hex.length !== 6) {
+        throw new Error('Invalid HEX color.');
+    }
+    var r = parseInt(hex.slice(0, 2), 16),
+        g = parseInt(hex.slice(2, 4), 16),
+        b = parseInt(hex.slice(4, 6), 16);
+    if (bw) {
+        // http://stackoverflow.com/a/3943023/112731
+        return (r * 0.299 + g * 0.587 + b * 0.114) > 186
+            ? '#000000'
+            : '#FFFFFF';
+    }
+    // invert color components
+    r = (255 - r).toString(16);
+    g = (255 - g).toString(16);
+    b = (255 - b).toString(16);
+    // pad each with zeros and return
+    return "#" + padZero(r) + padZero(g) + padZero(b);
+}
+function padZero(str, len) {
+    len = len || 2;
+    var zeros = new Array(len).join('0');
+    return (zeros + str).slice(-len);
+}
   anime({
     targets: "#card1",
     rotate: -45,
@@ -101,6 +153,7 @@
     delay: 1500
   });
   function mouseOver(card) {
+    selnum = (card.id.substring(4))
     num = "#panel"+(card.id.substring(4))
     var allcard = document.getElementsByClassName("card");
     console.log(num);
@@ -108,7 +161,11 @@
     card.style.opacity = "0";
     $(".panel").css("opacity","0");
     $(num).css("opacity","1");
-
+    $("body").css("background-color", dict[selnum+"c"])
+    $(".name").css("color", invertColor(dict[selnum+"c"], false))
+    $(".name").text(dict[selnum+"n"])
+    $(".name").css("opacity", "100%")
+    $("path, text").css('fill', invertColor(dict[selnum+"c"]))
     animationn.restart();
 
   }
@@ -125,6 +182,9 @@
     var allcard = document.getElementsByClassName("card");
     $(".card").css("opacity","1")
     $(".panel").css("opacity","0");
+    $(".name").css("opacity","0");
+    $("body").css("background-color", "white")
+    $("path, text").css('fill', "gray")
   }
 </script>
 <div class="theBall-outer"><div class="theBall"></div></div>

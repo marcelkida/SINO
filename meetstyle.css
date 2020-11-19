@@ -80,5 +80,18 @@ card1:hover{
 }
 
 .card{
-  top: 50%
+  top: 60%;
+  
+}
+body{
+  transition: all 1s;
+  background-color: white;
+}
+.name{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  font-size: 30vw;
+  opacity: 0%;
+  transition: all 1s;
 }
